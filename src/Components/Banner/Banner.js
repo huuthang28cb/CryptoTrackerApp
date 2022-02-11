@@ -1,5 +1,6 @@
 import { Container, makeStyles, Typography } from "@material-ui/core";
 import React from 'react'
+import Carousel from "./Carousel";
 
 
 const useStyles = makeStyles((theme) => ({
@@ -54,6 +55,7 @@ const Banner = () => {
                         Tại đây, nhận tất cả thông tin liên quan đến tiền tử yêu thích của bạn
                     </Typography>
                 </div>
+                <Carousel />
             </Container>
         </div>
     )

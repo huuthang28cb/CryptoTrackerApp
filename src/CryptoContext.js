@@ -9,7 +9,7 @@ const CryptoContext = ({ children }) => {
     useEffect(() => {
         if (currency === "INR") setSymbol("₹"); // Rupe Ấn độ
         else if (currency === "USD") setSymbol("$"); // Dollar mỹ
-        else if (currency === "VNĐ") setSymbol("đ"); // Việt Nam đồng
+        else if (currency === "VNĐ") setSymbol("vnđ"); // Việt Nam đồng
     }, [currency]);
 
     return (
