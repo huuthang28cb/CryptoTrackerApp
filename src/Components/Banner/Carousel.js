@@ -6,6 +6,7 @@ import AliceCarousel from "react-alice-carousel";
 import { Link } from "react-router-dom";
 import { TrendingCoins } from "../../config/api";
 import { CryptoState } from "../../CryptoContext";
+import { numberWithCommas } from "../CoinsTable";
 
 const Carousel = () => {
 
@@ -61,16 +62,18 @@ const Carousel = () => {
                     &nbsp;
                     <span
                         style={{
-                            color: profit > 0 ? "rgb(14, 203, 129)" : "red",
+                            color: profit > 0 ? "rgb(14, 203, 129)" : "red", // nếu mà tăng thì màu xanh, ngược lại thì màu đỏ
                             fontWeight: 500,
                         }}
                     >
                         {profit && "+"}
+
+                        {/* Làm tròn 2 chữ số thập thân */}
                         {coin?.price_change_percentage_24h?.toFixed(2)}%
                     </span>
                 </span>
                 <span style={{ fontSize: 22, fontWeight: 500 }}>
-                    {symbol} {(coin?.current_price.toFixed(2))}
+                    {symbol} {numberWithCommas(coin?.current_price.toFixed(2))}
                 </span>
             </Link>
         );
